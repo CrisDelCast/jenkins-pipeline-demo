@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clonar Código') {
+            steps {
+                git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
+            }
+        }
+        stage('Compilar con Maven') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
