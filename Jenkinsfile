@@ -3,6 +3,9 @@ pipeline {
     parameters {
         string(name: 'GIT_BRANCH', defaultValue: 'master', description: 'Selecciona la rama a compilar')
     }
+    tools {
+        maven 'Maven-3.9.6'
+    }
     environment {
         GIT_REPO = 'https://github.com/jenkins-docs/simple-java-maven-app.git'
         WORKSPACE_DIR = "${WORKSPACE}/simple-java-maven-app"
